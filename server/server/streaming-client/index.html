@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Streaming Screen</title>
+
+  <style>
+    body {
+      margin: 0;
+      background: #a5c6e0;
+      color: black;
+      font-family: system-ui, Segoe UI, Apple SD Gothic Neo, AppleGothic, Arial;
+    }
+    .wrap {
+      min-height: 100vh;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+    .stat {
+      opacity: 0.8;
+      font-size: 14px;
+    }
+    .card {
+      display: grid;
+      gap: 12px;
+    }
+    .box {
+      background: #8bb9dd;
+      border-radius: 12px;
+      padding: 16px;
+    }
+    .title {
+      font-size: 24px;
+      font-weight: 700;
+      color: #000;
+    }
+    iframe {
+      border: 0;
+      border-radius: 12px;
+    }
+    .empty {
+      opacity: 0.8;
+      padding: 40px;
+      border: 1px dashed #444;
+      border-radius: 12px;
+      text-align: center;
+    }
+    .chips {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+    .chip {
+      background: #6eb0e2;
+      border: 1px solid #6eb0e2;
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 13px;
+      opacity: 0.95;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+      <h2 style="margin:0; color: #000;">🎬 Streaming Screen</h2>
+      <span class="stat" id="wsStat" style="color: #000;">connecting...</span>
+    </div>
+
+    <!-- ✅ 감정/성별/나이 표시 공간 -->
+    <div id="metaChips" class="chips" style="display:none;"></div>
+
+    <div id="content" class="card">
+      <div class="empty" style="color: #000; font-weight: 550;">아직 재생 요청이 없습니다. 사용자 화면에서 “노래 전송”을 눌러보세요.</div>
+    </div>
+  </div>
+
+  <script src="./player.js"></script>
+</body>
+</html>
